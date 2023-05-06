@@ -9,9 +9,10 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
 
-const endTime = Number(import.meta.env.END_TIME) ?? 1600008033008;
+const endTime = parseInt(import.meta.env.END_TIME) ?? 1600008033008;
 const now = ref(Date.now());
 const relativeTime = computed(() => {
+	console.log(import.meta.env.END_TIME, "end time");
 	console.log(endTime);
 	const diff = endTime - now.value;
 	console.log(diff);
