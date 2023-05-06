@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
 
-const endTime = import.meta.env.END_TIME as number ?? 1600008033008;
+const endTime = Number(import.meta.env.END_TIME) ?? 1600008033008;
 const now = ref(Date.now());
 const relativeTime = computed(() => {
 	console.log(endTime);
