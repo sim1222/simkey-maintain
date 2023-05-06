@@ -9,13 +9,10 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
 
-const endTime = parseInt(import.meta.env.END_TIME) ?? 1600008033008;
+const endTime = parseInt(import.meta.env.VITE_END_TIME) ?? 1600008033008;
 const now = ref(Date.now());
 const relativeTime = computed(() => {
-	console.log(import.meta.env.END_TIME, "end time");
-	console.log(endTime);
 	const diff = endTime - now.value;
-	console.log(diff);
 	const sec = Math.floor(diff / 1000);
 	const min = Math.floor(sec / 60);
 	const hour = Math.floor(min / 60);
